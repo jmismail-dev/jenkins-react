@@ -14,4 +14,5 @@ pipeline {
             }
         }
     }
+    tools { nodejs 'NodeJs' }  //name should be similar to name used for installer in the global tool configuration.
 }
