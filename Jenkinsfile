@@ -21,6 +21,7 @@ pipeline {
                 sh 'sudo rm -rf /var/www/jenkins-react-app'
                 sh "cd  ${WORKSPACE} && mkdir build"
                 sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/"
+                sh 'cd /var/www/jenkins-react-app/ && ls'
             }
         }
     }
