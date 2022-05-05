@@ -20,9 +20,10 @@ pipeline {
             steps {
                 sh 'sudo rm -rf /var/www/jenkins-react-app'
                 // sh "cd  ${WORKSPACE} && mkdir build"
+                sh "ls ${WORKSPACE}"
                 sh "sudo cp -r ${WORKSPACE}/dist/ /var/www/jenkins-react-app/"
-                // sh 'mkdir /var/www/jmismail'
-                // sh 'cd /var/www/jenkins-react-app/ && ls'
+            // sh 'mkdir /var/www/jmismail'
+            // sh 'cd /var/www/jenkins-react-app/ && ls'
             }
         }
     }
