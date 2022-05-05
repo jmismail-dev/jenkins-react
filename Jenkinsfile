@@ -22,6 +22,7 @@ pipeline {
                 // sh "cd  ${WORKSPACE} && mkdir build"
                 sh "cd ${WORKSPACE}/dist && ls"
                 sh "sudo cp -r ${WORKSPACE}/dist/ /var/www/jenkins-react-app/"
+                sh 'pm2 delete 0'
                 // sh 'cd /var/www && mkdir jmismail'
             // sh 'cd /var/www/jenkins-react-app/ && ls'
             }
