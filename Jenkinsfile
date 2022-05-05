@@ -1,9 +1,17 @@
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
+    tools { nodejs 'nodejs' }
     stages {
+        stage('Test npm') {
+            steps {
+                sh '''
+          npm --version
+        '''
+            }
+        }
         stage('Build') {
             steps {
-                sh 'export PATH=$PATH:/usr/local/in/npm'
                 sh 'sudo npm install'
                 sh 'sudo npm run build'
             }
@@ -15,5 +23,4 @@ pipeline {
             }
         }
     }
-    tools { nodejs 'NodeJs' }  //name should be similar to name used for installer in the global tool configuration.
 }
